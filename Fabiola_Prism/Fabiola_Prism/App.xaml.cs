@@ -4,6 +4,7 @@ using Fabiola_Prism.Views;
 using Prism;
 using Prism.DryIoc;
 using Prism.Ioc;
+using Syncfusion.Licensing;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
@@ -19,6 +20,9 @@ namespace Fabiola_Prism
 
         protected override async void OnInitialized()
         {
+            //colocar aqui a chave do syncfusion
+            SyncfusionLicenseProvider.RegisterLicense("");
+
             InitializeComponent();
 
             await NavigationService.NavigateAsync("NavigationPage/ProductsPage");
@@ -31,6 +35,7 @@ namespace Fabiola_Prism
             containerRegistry.RegisterForNavigation<NavigationPage>();            
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<ProductsPage, ProductsPageViewModel>();
+            containerRegistry.RegisterForNavigation<ProductDetailPage, ProductDetailPageViewModel>();
         }
     }
 }
