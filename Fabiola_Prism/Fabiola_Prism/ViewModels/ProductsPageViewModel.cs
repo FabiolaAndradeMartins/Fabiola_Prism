@@ -1,4 +1,5 @@
-﻿using Fabiola_Prism.ItemViewModel;
+﻿using Fabiola_Prism.Helpers;
+using Fabiola_Prism.ItemViewModel;
 using Fabiola_Prism.Models;
 using Fabiola_Prism.Services;
 using Prism.Commands;
@@ -29,7 +30,7 @@ namespace Fabiola_Prism.ViewModels
         {
             _navigationService = navigationService;
             _apiService = apiService;
-            Title = "Products Page";
+            Title = Languages.Products;
             LoadProductsAsync();
         }
 
@@ -62,8 +63,10 @@ namespace Fabiola_Prism.ViewModels
             {
                 Device.BeginInvokeOnMainThread(async () =>
                 {
-                    await App.Current.MainPage.DisplayAlert("Error", 
-                        "Check internet connection", "Accept");
+                    await App.Current.MainPage.DisplayAlert(
+                        Languages.Error, 
+                        Languages.ConnectionError, 
+                        Languages.Accept);
                 });
                 return;
             }
@@ -78,17 +81,23 @@ namespace Fabiola_Prism.ViewModels
            
             if(!response.IsSuccess)
             {
-                await App.Current.MainPage.DisplayAlert("Error", response.Message, "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error, 
+                    response.Message, 
+                    Languages.Accept);
                 return;
             }
 
             _myProducts= (List<ProductResponse>)response.Result;
+
+            foreach (ProductResponse product in _myProducts)
+            {
+                product.ImageFullPath = $"http://www.supershopfabiola.somee.com/{product.ImageFullPath}";
+            }
+
             ShowProducts();
 
-            foreach (ProductResponse product in Products)
-            {
-                 product.ImageFullPath = $"http://www.supershopfabiola.somee.com/{product.ImageFullPath}";
-            }
+            
         }
 
         private void ShowProducts()
@@ -103,13 +112,12 @@ namespace Fabiola_Prism.ViewModels
                  ImageUrl = p.ImageUrl,
                  LastPurchase = p.LastPurchase,
                  LastSale = p.LastSale,
-                 IsAvailable = p.IsAvailable,
+                 IsAvaiable = p.IsAvaiable,
                  Stock = p.Stock,
                  User = p.User,
                  ImageFullPath = p.ImageFullPath
                 }).ToList());
             }
-
             else
             {
                 Products = new ObservableCollection<ProductItemViewModel>(
@@ -122,7 +130,7 @@ namespace Fabiola_Prism.ViewModels
                         ImageUrl = p.ImageUrl,
                         LastPurchase = p.LastPurchase,
                         LastSale = p.LastSale,
-                        IsAvailable = p.IsAvailable,
+                        IsAvaiable = p.IsAvaiable,
                         Stock = p.Stock,
                         User = p.User,
                         ImageFullPath = p.ImageFullPath

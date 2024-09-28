@@ -18,7 +18,7 @@ namespace Fabiola_Prism.Models
 
         public object LastSale { get; set; }
 
-        public bool IsAvailable { get; set; }
+        public bool IsAvaiable { get; set; }
 
         public float Stock {  get; set; }
 
