@@ -127,4 +127,16 @@
   <data name="Products" xml:space="preserve">
     <value>Products</value>
   </data>
+  <data name="IsAvaiable" xml:space="preserve">
+    <value>IsAvailable</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="LastPurchase" xml:space="preserve">
+    <value>Last Purchase</value>
+  </data>
+  <data name="LastSale" xml:space="preserve">
+    <value>Last Sale</value>
+  </data>
 </root>

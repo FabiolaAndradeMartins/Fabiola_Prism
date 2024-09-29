@@ -40,5 +40,11 @@ namespace Fabiola_Prism.Helpers
 
         public static string SearchProduct=> Resource.SearchProduct;
 
+        public static string Stock=> Resource.Stock;
+
+        public static string IsAvaiable=> Resource.IsAvaiable;
+        public static string LastPurchase=> Resource.LastPurchase;
+        public static string LastSale=> Resource.LastSale;
+
     }
 }
