@@ -118,7 +118,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\drawable-hdpi\ic_card_giftcard.png" />
+    <Content Include="Resources\drawable-hdpi\ic_exit_to_app.png" />
+    <Content Include="Resources\drawable-hdpi\ic_history.png" />
+    <Content Include="Resources\drawable-hdpi\ic_menu.png" />
     <Content Include="Resources\drawable-hdpi\ic_more_vert.png" />
+    <Content Include="Resources\drawable-hdpi\ic_person.png" />
+    <Content Include="Resources\drawable-hdpi\ic_shopping_cart.png" />
+    <Content Include="Resources\drawable-hdpi\ic__on_sale.png" />
     <Content Include="Resources\drawable-mdpi\ic_more_vert.png" />
     <Content Include="Resources\drawable-xhdpi\ic_more_vert.png" />
     <Content Include="Resources\drawable-xxhdpi\ic_more_vert.png" />
@@ -128,6 +135,15 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\ic_more_vert.png" />
+    <AndroidResource Include="Resources\drawable\ic_card_giftcard.png" />
+    <AndroidResource Include="Resources\drawable\ic_exit_to_app.png" />
+    <AndroidResource Include="Resources\drawable\ic_history.png" />
+    <AndroidResource Include="Resources\drawable\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable\ic_person.png" />
+    <AndroidResource Include="Resources\drawable\ic_shopping_cart.png" />
+    <AndroidResource Include="Resources\drawable\ic__on_sale.png" />
+    <AndroidResource Include="Resources\drawable\shop.png" />
+    <AndroidResource Include="Resources\drawable\store.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
